@@ -35,7 +35,7 @@ namespace CS_Lab
                 {
                     Console.Write("Type of exam\t:");
                     string examType = Console.ReadLine();
-                    Console.Write("Exam socre\t:");
+                    Console.Write("Exam score\t:");
                     string examScore = Console.ReadLine();
                     int examScoreInt;
                     if (!int.TryParse(examScore, out examScoreInt))
@@ -44,7 +44,7 @@ namespace CS_Lab
                     }
                     else
                     {
-                        string result = getExamResult(examType, examScoreInt);
+                        string result = getExamResult(examType.ToUpper(), examScoreInt);
                         Console.WriteLine("Exam result\t:" + result + "\n");
                         if(result != "")
                         {
@@ -67,7 +67,7 @@ namespace CS_Lab
         private string getExamResult(string examType, int examScoreInt)
         {
             string result="";
-            if (examType == "p")
+            if (examType == "P")
             {
                 if (examScoreInt >= 60 && examScoreInt <= 100)
                 {
